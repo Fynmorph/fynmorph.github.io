@@ -1,0 +1,76 @@
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="../Aleksandre.css" media="screen" title="comments">
+</head>
+
+<body style="background-color:#5891FA;margin-left:30%;margin-right:30%;">
+
+	
+	<center><div class=bouton><a href="../screen.html">
+	<<<
+	</div></a></center>
+	
+	</br></br>
+
+	<center><b><span style="font-size:30"><span style="color:red;">CONFIRM YOUR IDENTITY</span></br>PUT YOUR FINGER ON THE</br>FINGERPRINT SCANNER PLEASE</span></b>
+	
+	</br>
+	
+	<img src="prints_reader.png" alt="prints_reader"></center>
+	
+</br>
+<center>	
+	<form action="javascript:exe();" method="get">
+<input id="pass" value="" type="input">
+<input type="submit" value="Submit">
+	</form>
+</center>
+	
+	
+	<center style="background-color:red; font-weight: bold;"><div id="result"></div></center></br>
+	
+	
+	<p><p>
+	<img src="../mich.gif" alt="mich"/><p>
+	<div class=msg id="hint">
+	Again? It's really well protected. I feel like we're getting closer.</br>
+	
+	Mhhh there's some weird residue on the reader...</u>
+	</div>
+	
+	
+
+</body>
+
+<script src="../jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../custom.js"></script>
+<script type="text/javascript" src="../utf8_encode.js"></script>
+<script type="text/javascript" src="../md5.js"></script>
+<script language="javascript" type="text/javascript">
+	
+	function exe(){
+	var mdp = document.getElementById('pass').value;
+	console.log(mdp);
+	if (md5(mdp) == "5fa58915fea0b7f3e0f1e8ec558a9123"){
+	window.location.href = mdp + ".html";
+	}
+	else{
+	var seconds = new Date().getTime();
+	$( '#result' ).replaceWith( '<div id="result">' +seconds + ". Error.</div>" ); 
+	
+	document.cookie = "error =" + (Number(getCookie("error"))+1) + "; path=/"
+	if(getCookie("error")>=12){
+	$( '#hint' ).replaceWith( "<div class=msg id='hint'>If only we could put Aleksandre's finger or his fingerprints on the reader...</div>" ); 
+	}
+	if(getCookie("error")>=19){
+	$( '#hint' ).replaceWith( "<div class=msg id='hint'>Look back, maybe we missed a clue related to fingerprints.</div>" ); 
+	}
+	if(getCookie("error")>=26){
+	$( '#hint' ).replaceWith( "<div class=msg id='hint'>You need to overlap his fingerprints on the reader and see whatever you can get.</div>" ); 
+	}
+	}
+		
+	}
+
+</script>

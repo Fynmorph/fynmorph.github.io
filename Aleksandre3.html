@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="Aleksandre.css" media="screen" title="comments">
+</head>
+
+<body style="background-color:#5891FA;margin-left:30%;margin-right:30%;">
+
+	
+	<center><div class=bouton><a href="Aleksandre2.html">
+	<<<
+	</div></a></center>
+	
+	<p><p>
+	<img src="mich.gif" alt="mich"/><p>
+	<div class=msg>
+	I suggest we start here: <p> My other Agent who's on the field retrieved this from their hotel room:<p>
+	It's a briefcase, likely Aleksandre's. It might contain critical informations. It was accompanied with a paper and a box.
+	<p>In the attached files, I also provided the faces of Aleksandre, his accolyte Pedro, and the children who were seen with them at the airport. Their faces have been blurred out for confidentiality though.</p>
+	
+	Good luck.
+	</div>
+
+	<p>
+	
+	
+	
+	<div id="ordi"></div>
+	
+	<p>the briefcase</p>
+	<a href="javascript:valise()"><img src="valise.png" alt="brief"/></a>
+	
+	<p>a box</p>
+	<a href="box.html"><img src="box_mini.png" alt="box"/></a>
+	
+	
+	<p>a paper he found nearby</p>
+	<a href="papier.png"><img src="papier_mini.png" alt="paper"/></a>
+	
+	<p>a chinese-english dictionnary, probably for their travel</p>
+	<img src="dico.png" alt="dic"/>
+	
+	<p>aleksandre and pedro</p>
+	<img alt="aleksandre" src="aleksandre.png"> <img alt="pedro" src="pedro.png"> </br>
+	<p>the children</p>
+	<img alt="kid" src="kid01.png"> <img alt="kid" src="kid02.png"> <img alt="kid" src="kid03.png"> <img alt="kid" src="kid04.png">
+
+	
+</body>
+</html>
+
+
+  <script src="jquery-1.10.2.js"></script>
+<script type="text/javascript" src="custom.js"></script>
+<script type="text/javascript">
+
+
+
+	if (getCookie("hack") && getCookie("hack")!="off"){
+	document.cookie = "error =" + (Number(getCookie("error"))+1) + "; path=/"
+	window.location.href = "screen/"+ getCookie("hack") + ".html";
+	}
+
+	if(getCookie("ordinateur")){
+	 $( '#ordi' ).replaceWith( ' <p>a laptop</p> <a href="javascript:ordi()"><img src="computer_mini.png" alt="computer3.png"/></a>' ); 
+	 }; 
+
+function valise(){
+	
+	if(getCookie("valise")){
+	window.location.href = getCookie("valise") + ".html";
+	}	
+	else {
+	window.location.href = "Aleksandre4.html";
+	}	
+}
+
+function ordi(){
+	
+	if(getCookie("ordinateur")){
+	window.location.href = getCookie("ordinateur") + ".html";
+	}	
+	else {
+	window.location.href = "screen.html";
+	}	
+}
+</script>

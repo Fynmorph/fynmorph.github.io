@@ -1,0 +1,65 @@
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="../Aleksandre.css" media="screen" title="comments">
+</head>
+
+<body style="background-color:#5891FA;margin-left:30%;margin-right:30%;">
+
+	
+	<center><div class=bouton><a href="../screen.html">
+	<<<
+	</div></a></center>
+	
+	</br></br>
+
+	<center><img src="webcam.png" alt="webcam">
+	
+	</br>
+	
+	<img src="facereco.png" alt="facereco"></center>
+	
+	</br></br>
+	<center><input type='file' id="facereco" onchange="readFace(this)"; /></center>
+	</br>
+	
+	
+	 <center style="background-color:red; font-weight: bold;"><div id="result"></div></center> </br>
+	
+	
+	<p><p>
+	<img src="../mich.gif" alt="mich"/><p>
+	<div class=msg id="hint">
+	A facial recognition software huh? </p>
+	I guess you could trick the software if you just had <u>a picture of the computer's owner.</u>
+	</div>
+	
+	
+
+</body>
+
+<script type="text/javascript" src="../jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../custom.js"></script>
+<script type="text/javascript" src="../utf8_encode.js"></script>
+<script type="text/javascript" src="../md5.js"></script>
+<script language="javascript" type="text/javascript">
+
+	function readFace(e){
+	
+	if (typeof FileReader !== "undefined") {
+    var size = document.getElementById('facereco').files[0].size;
+}
+		var Filename = $('#facereco').val().split('/').pop().split('\\').pop().split('.')[0]; //
+		console.log(Filename);
+		if (size == 4299 && md5(Filename)=="5fb442b6c100790ca2180f7b569dcaa3"){
+		window.location.href = Filename + ".html";
+		}
+		else {
+	document.cookie = "error =" + (Number(getCookie("error"))+1) + "; path=/"
+	var seconds = new Date().getTime();
+
+			$( '#result' ).replaceWith( '<div id="result">' +seconds + ". Error. Face unidentified. Please check the following:</br>The face is fully visible</br>You're facing directly the camera</br>Remove your eyeglasses.</br>There's no filter or any use of image manipulation.</div>" ); 
+		}
+		}
+
+</script>

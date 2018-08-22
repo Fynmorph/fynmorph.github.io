@@ -1,0 +1,77 @@
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="../Aleksandre.css" media="screen" title="comments">
+</head>
+
+<body style="background-color:#5891FA;margin-left:30%;margin-right:30%;">
+
+	<center><div class=bouton><a href="../screen.html">
+	<<<
+	</div></a></center>
+	
+		</br></br>
+		
+<center>
+<img alt="locked" src="screen_pw.gif">
+</center>
+
+
+</br></br>
+
+<center>
+	
+	<form action="javascript:exe();" method="get">
+<input id="pass" value="" type="input">
+<input type="submit" value="Submit">
+	</form>
+</center>	
+	</br>
+
+	<img src="../mich.gif" alt="mich"/><p>
+	<div class=msg id='hint'>
+	Another password, and no hint this time...
+	</div>
+
+</br></br> <center><div id="result"></div></center>
+
+
+	
+</body>
+
+<script type="text/javascript" src="../jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../custom.js"></script>
+<script type="text/javascript" src="../utf8_encode.js"></script>
+<script type="text/javascript" src="../md5.js"></script>
+<script language="javascript" type="text/javascript">
+
+
+	function exe(){
+	var mdp = document.getElementById('pass').value;
+	console.log(mdp);
+	if (md5(mdp) == "3d0df501c60f7bf1a299df5df09613d6"){
+	window.location.href = mdp + ".html";
+	}
+	else{
+	document.cookie = "error =" + (Number(getCookie("error"))+1) + "; path=/"
+	
+	var element = document.getElementById("result");
+	element.appendChild(document.createTextNode ("WRONG PASSWORD"));
+	element.appendChild(document.createElement("br"));
+	
+	if(getCookie("error")>=7 && !getCookie("recycle")){
+	$( '#hint' ).replaceWith( "<div class=msg id='hint'>Let's go elsewhere, maybe you can unlock other folders.</div>" ); 
+	}
+	
+	if(getCookie("error")>=7 && getCookie("recycle")){
+	$( '#hint' ).replaceWith( "<div class=msg id='hint'>Let's go find where you could input what's written on those two scraps of paper.</div>" ); 
+	}
+	
+	if(getCookie("error")>=15 && getCookie("recycle")){
+	$( '#hint' ).replaceWith( "<div class=msg id='hint'>There's a underlying grid on 'the other.png' and 'half.png'</br>Where else have we seen a grid?</div>" ); 
+	}
+	}
+		
+	}
+
+</script>

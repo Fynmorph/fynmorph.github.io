@@ -1,0 +1,147 @@
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="../Aleksandre.css" media="screen" title="comments">
+	<link rel="stylesheet" href="website.css" media="screen" title="comments">
+</head>
+
+<body >
+
+	
+	<center><a href="../screen.html">
+	<<<
+	</a></center>
+	
+	</br></br>
+	<div id="replace">On demand, we can provide pictures or videos of a specific child to potential customers.</div>
+	</br>
+	
+	<center>
+	<table border=5>
+		<tr>
+			<td><center>picture</center></td>
+			
+			<td><center> <img src="uy89!+Eri.png" alt="Eri"/></td>
+			
+			<td><center> <img src="uy90W_Tab.png" alt="Jas"/></td>
+			
+			<td><center> <img src="uy91&dDia.png" alt="Dia"/></td>
+			
+			<td><center> <img src="uy92e3Asi.png" alt="Asi"/></td>
+			
+			<td><center> <img src="uy93$fJul.png" alt="Jul"/></td>
+			<td><center><img src="uy94HHan.png" alt="ji-eun"/></td>
+			<td><center><img src="fynmorph.png" alt="fynmorph"/></td>
+			
+<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="3C42EN8X2SQAU">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+</form> -->
+
+		</tr>
+
+		<tr>
+			<td><center>name</center></td>
+			<td><center><b>E</b>rik</center></td>
+			<td><center><b>T</b>abia</center></td>
+			<td><center><b>D</b>iao</center></td>
+			<td><center><b>A</b>siya</center></td>
+			<td><center><b>J</b>ulia</center></td>
+			<td><center><b>H</b>aneul</center></td>
+			<td><center><b>W</b>illiam</center></td>
+		</tr>
+		
+		<tr>
+			<td><center>age</center></td>
+			<td><center>10</center></td>
+			<td><center>8</center></td>
+			<td><center>9</center></td>
+			<td><center>11</center></td>
+			<td><center>7</center></td>
+			<td><center>5</center></td>
+			<td><center>??</center></td>
+			
+		</tr>
+		
+		<tr>
+			<td><center>description</center></td>
+			<td><center>very timid and submissive, but sometimes sneaks where he shouldn't.</center></td>
+			<td><center>used to do the cleaning. You won't have much problem with her</center></td>
+			<td><center>likes computer. Be careful she's allergic to milk.</center></td>
+			<td><center>acts boyish. Into roleplaying. Currently not for sell.</center></td>
+			<td><center>a little rebellious, don't hesitate to punish her :) Hates bugs</center></td>
+			<td><center>lazy. Very sensitive body.</center></td>
+			<td><center>likes drawing and dumb browser games. Currently not for sell.</center></td>
+		</tr>
+		
+		<tr>
+		<td></td>
+		<td><center><button type="button" onClick=banned(1)>Buy</button></center></td>
+		<td><center><button type="button" onClick=banned(2)>Buy</button></center></td>
+		<td><center><button type="button" onClick=banned(3)>Buy</button></center></td>
+		<td><center><button type="button" onClick=banned(4)>Buy</button></center></td>
+		<td><center><button type="button" onClick=banned(5)>Buy</button></center></td>
+		<td><center><button type="button" onClick=banned(6)>Buy</button></center></td>
+		<td><center><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3C42EN8X2SQAU" target="_blank"><button type="button" onClick=notbanned()>DONATE</button></a></td>
+		</tr>
+	
+	</table></center>
+	
+	</br></br>
+	<div id="result"></div> </br></br>
+
+		<div style="margin-left:30%;margin-right:30%;">
+	<img src="../mich.gif" alt="mich"/><p>
+	<div class=msg id='hint'>
+	Bravo, you managed to enter their website. I'll personally take it down later. Let's look elsewhere for now.
+	</div>
+	</div>
+
+</body>
+
+<script src="../jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../custom.js"></script>
+<script type="text/javascript" src="../utf8_encode.js"></script>
+<script type="text/javascript" src="../md5.js"></script>
+<script language="javascript" type="text/javascript">
+
+	if (getCookie("hack") && getCookie("hack")!="off"){
+	document.cookie = "error =" + (Number(getCookie("error"))+1) + "; path=/"
+	window.location.href = getCookie('hack') + ".html";
+	}
+
+donation = 0
+document.cookie = "creepy = on";
+
+if (getCookie("link")){
+	$( '#replace' ).replaceWith( "<div><a href='"+getCookie("link")+".html'>On demand, we can provide pictures or videos of a specific child to potential customers.</a></div>" ); 
+	}
+
+	if (getCookie("last")){
+	$( '#hint' ).replaceWith( "<div class=msg id='hint'>Alright, let's finish this. Try to see where you could input '" + getCookie("last") + "'.</div>" ); 
+	}
+	
+	function banned(e){
+	donation = donation*10 + e;
+	var element = document.getElementById("result");
+	element.appendChild(document.createTextNode ("Your account has been restricted."));
+	element.appendChild(document.createElement("br"));
+	if(md5(donation)=="9f79494827fa942099b772638e25ea2a"){
+	window.location.href = donation + ".html";
+	}
+	}
+		
+	function notbanned(){
+	var element = document.getElementById("result");
+	element.appendChild(document.createTextNode ("Your account has been restricted. But since you're trying to donate,"));
+	element.appendChild(document.createElement("br"));
+	element.appendChild(document.createTextNode ("the restriction has been temporary lifted."));
+	element.appendChild(document.createElement("br"));
+	}
+	
+	
+
+</script>

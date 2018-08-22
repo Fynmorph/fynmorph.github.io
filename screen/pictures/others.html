@@ -1,0 +1,53 @@
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="../../Aleksandre.css" media="screen" title="comments">
+</head>
+
+<body style="background-color:#5891FA;margin-left:30%;margin-right:30%;">
+
+	<center><div class=bouton><a href="index.html">
+	<<<
+	</div></a></center>
+	
+		</br></br></br>
+
+<center>
+<a href="banthatguy.png"><img alt="mini" src="banthatguy_mini.png"></a></br>
+banthatguy.png
+</center>
+
+
+</br></br>
+
+	<img src="../../mich.gif" alt="mich"/><p>
+	<div class=msg id="hint">
+	Shoot. That screenshot contains everything BUT the login and password.</br>
+	</div>
+
+<center>
+
+
+
+</br></br> <div id="result"></div></center>
+
+
+	
+</body>
+
+<script type="text/javascript" src="../../jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
+<script type="text/javascript" src="../../utf8_encode.js"></script>
+<script type="text/javascript" src="../../md5.js"></script>
+<script language="javascript" type="text/javascript">
+
+	if(getCookie("error")>=15){
+	$( '#hint' ).replaceWith( "<div class=msg id='hint'>The best course of action I think would be to find that original message wherever it was posted.</div>" ); 
+	}
+
+	if (getCookie("hack") && getCookie("hack")!="off"){
+	document.cookie = "error =" + (Number(getCookie("error"))+1) + "; path=/"
+	window.location.href = "../"+getCookie("hack") + ".html";
+	}
+
+</script>

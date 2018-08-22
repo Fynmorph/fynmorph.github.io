@@ -1,0 +1,74 @@
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="Aleksandre.css" media="screen" title="comments">
+</head>
+
+<body style="background-color:#5891FA;margin-left:30%;margin-right:30%;">
+
+	
+	<center><div class=bouton><a href="Aleksandre3.html">
+	<<<
+	</div></a>
+	
+		</br></br>
+	<center><img src="computer2.png"  alt="brief" /></center>
+	</br></br>
+	
+	<center>
+	
+	<form action="javascript:exe();" method="get">
+<input id="pass" value="" type="input">
+<input type="submit" value="Submit">
+	</form>
+</center>
+
+
+	</center>
+	<p></p>
+	
+ <div id="result"></div>
+ </br>
+ <div id="hint"></div>
+
+	
+</body>
+
+
+<script type="text/javascript" src="jquery-1.10.2.js"></script>
+<script type="text/javascript" src="custom.js"></script>
+<script type="text/javascript" src="utf8_encode.js"></script>
+<script type="text/javascript" src="md5.js"></script>
+<script language="javascript" type="text/javascript">
+
+	if(getCookie("valise")== ""){
+	document.cookie = "valise = 5 ; path=/" ;
+	}	
+	
+	function exe(){
+	var mdp = document.getElementById('pass').value;
+	console.log(mdp);
+	if (md5(mdp) == "6d4db5ff0c117864a02827bad3c361b9"){
+	window.location.href = mdp + ".html";
+	}
+	else{
+
+	var element = document.getElementById("result");
+
+	element.appendChild(document.createTextNode ("hint: old scar of that mexican"));
+	element.style.textAlign = "center";
+	element.appendChild(document.createElement("br"));
+	
+	document.cookie = "error =" + (Number(getCookie("error"))+1) + "; path=/"
+	
+if(getCookie("error")>=5){
+	$( '#hint' ).replaceWith( '<div id="hint"> 	<img src="mich.gif" alt="mich"/><p><div class=msg>Scars are pretty hard to hide. We would be lucky if it happened to be on his face right?</div></div>' ); 
+	}
+
+if(getCookie("error")>=10){
+	$( '#hint' ).replaceWith( '<div id="hint"> 	<img src="mich.gif" alt="mich"/><p><div class=msg>You might need to use that Paint software.</div></div>' ); 
+	}
+		
+	}
+	}
+</script>
