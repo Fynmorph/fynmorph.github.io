@@ -4,21 +4,21 @@
 
 
 function print(e, type){
-	switch (type) {
-	case 1:  
-	css = "background-color:#f66; font-weight:bold"
-	break
-	case 2:     
-	css = "background-color:#fcc"
-	break;
-	case 3:   
-	css = "background-color:#fee"
-	size= '5'
-	break;
-	default: 
-	css = "background-color:#fff"
-	}
-	console.log("%c" + e, css);
+	// switch (type) {
+	// case 1:  
+	// css = "background-color:#f66; font-weight:bold"
+	// break
+	// case 2:     
+	// css = "background-color:#fcc"
+	// break;
+	// case 3:   
+	// css = "background-color:#fee"
+	// size= '5'
+	// break;
+	// default: 
+	// css = "background-color:#fff"
+	// }
+	// console.log("%c" + e, css);
 }
 
 let board = null;
