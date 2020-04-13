@@ -1,0 +1,2 @@
+game.load("r1bakab1r/9/2n3n2/p1p3p1p/1C2C4/2P6/c3P3P/6N2/9/1RBAKABR1 r - - 2 8"
+);board.position(game.fen())

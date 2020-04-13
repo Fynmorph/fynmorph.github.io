@@ -1,43 +1,67 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-	<link rel="stylesheet" href="Aleksandre.css" media="screen" title="comments">
-	
-<script type="text/javascript" src="custom.js"></script>
-<script language="javascript" type="text/javascript">
-</script>
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-<body style="background-color:#5891FA;margin-left:30%;margin-right:30%;">
+<link rel="stylesheet" href="css/xiangqiboard-0.2.0.min.css" />
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/xiangqiboard-0.2.0.js"></script>
+<script src="js/xiangqi.min.js"></script>
 
 
-	<img src="mich.gif" alt="mich"/><p>
-	<div class=msg>
-	Welcome back Agent,<br><br>
-	
-	We have a new mission for you.
-	<p>You will need to know <a href="basic_paint.png">how to use</a> an image manipulation software like Paint, how to save files I'll send you, and use your big brain.<p>
-	Be careful though, you might have to deal with themes about pedophilia and human exploitation.<p>
-	If you received my message and accept the mission, call 'ACCEPT' Agent.<br><br>
-	
-	There's also a walkthrough if you're really stuck.</p>
-	</div>
-	<br>
-	<br>   
-	
-	<center><div class=bouton><a href="Aleksandre2.html">
-	ACCEPT
-	</a></div></center>
-	
-	<br>
-	<br>   
-	
-	<center><div class=bouton style="font-size:20px"><a href="walkthrough.html">
-	walkthrough
-	</a></div></center>
-	
+<style type="text/css">
+.highlight {
+  box-shadow: inset 0 0 3px 3px white;
+}
+.highlight-red {
+  box-shadow: inset 0 0 3px 3px yellow;
+}
+.highlight-black {
+  box-shadow: inset 0 0 3px 3px blue;
+  
+html, body {
+  overflow: hidden;
+position: fixed;
+}
+
+
+</style>
+<body>
+<h3 class="board">
+Alpha beta
+</h3>
+<div id="myBoard" class="board" style="width:375px"></div>
+<br>
+<button onclick="game.undo(); board.position(game.fen()),game.undo(); board.position(game.fen())">UNDO</button>
+<div class="info">
+    Search depth:
+    <select id="search-depth">
+        <option value="1">1</option>
+        <option value="2" selected >2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+    <br>
+    <span>Positions evaluated: <span id="position-count"></span></span>
+    <br>
+	<span>Capture positions evaluated: <span id="position-count2"></span></span>
+    <br>
+    <span>Time: <span id="time"></span></span>
+    <br>
+    <span>Positions/s: <span id="positions-per-s"></span> </span>
+    <br>
+    <br>
+    <div id="move-history" class="move-history">
+    </div>
+</div>
 </body>
+<script>var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+var height = (window.innerHeight > 0) ? window.innerHeight*0.5 : screen.height;
+document.getElementById("myBoard").style.width = Math.min(width,height);
 
-</html>
+// Disable scrolling.
+document.getElementById("myBoard").ontouchmove = function (e) {
+  e.preventDefault();
+}
+</script>
+<script src="js/script.js"></script>
