@@ -58,7 +58,7 @@ function makeRandomMove () {
 	} 
 
 	var move = getBestMove(game);
-	game.move(move.iccs);
+	game.move(move);
 
 
 	// highlight black's move
@@ -74,7 +74,7 @@ var minimaxRoot =function(depth, game, color) {
 
 	var newGameMoves = game.moves({verbose: true});
 	//use any negative large number
-	var bestValue = -9999;
+	var bestValue = -10000;
 	var bestMoveFound;
 
 	for(var i = 0; i < newGameMoves.length; i++) {
@@ -98,9 +98,8 @@ var minimaxRoot =function(depth, game, color) {
 
 var negaMax = function(depth, game, alpha, beta, color){
 	positionCount++;
-	if (game.in_checkmate()){ return color * (-9999); }
+	
 	if (depth === 0) {
-		print("depth:"+depth);
 		return Quiesce( alpha, beta, 0, -color); // minus pour le minimax des noirs
 	}
 	var bestValue = -9999;
@@ -108,11 +107,15 @@ var negaMax = function(depth, game, alpha, beta, color){
 	for(var i = 0; i < allMoves.length; i++) {
 		var move = allMoves[i];
 		game.move(move);
-		print("depth:"+depth);
-		cValue = -negaMax( depth - 1 , game, -beta, -alpha, -color);
-		if (bestValue < cValue){
-			bestValue = cValue;
-			bestMove = move;
+		
+		if (game.in_checkmate()){ bestValue = 9999; }
+		
+		else{
+			cValue = -negaMax( depth - 1 , game, -beta, -alpha, -color);
+			if (bestValue < cValue){
+				bestValue = cValue;
+				var bestMove = move;
+			}
 		}
 		game.undo(); 
 
@@ -124,7 +127,7 @@ var negaMax = function(depth, game, alpha, beta, color){
 		}
 
 	}
-	print("for depth:"+depth+" returned "+ (bestValue) + " from move: " + bestMove,1);
+	print("for depth:"+depth+" returned "+ (-color * bestValue) + " from move: " + bestMove,1);
 	return bestValue;
 }
 
@@ -157,7 +160,7 @@ var Quiesce= function( alpha, beta, depth, color){
 			}
 		}
 	}
-	print("quiesce best score was :" + color * bestValue, 2);
+	//print("quiesce best score was :" + color * bestValue, 2);
 
 	return bestValue;
 }
@@ -219,16 +222,16 @@ var pEvalBlack = reverseArray(pEvalRed);
 
 var rEvalRed =
 [
-[10.0,  10.0,  10.0,  10.0,  10.0,  10.0,  10.0,  10.0, 10.0],
-[10.0,  10.0,  10.0,  10.0,  10.0,  10.0,  10.0,  10.0, 10.0],
-[10.0,  10.0,  10.0,  10.0,  10.0,  10.0,  10.0,  10.0, 10.0],
-[10.0,  10.0,  10.0,  10.0,  10.0,  10.0,  10.0,  10.0, 10.0],
-[10.0,  10.0,  10.0,  10.0,  10.0,  10.0,  10.0,  10.0, 10.0],
 [0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0.0],
 [0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0.0],
 [0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0.0],
 [0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0.0],
 [0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0.0],
+[0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0.0],
+[0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0.0],
+[0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0.0],
+[0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0.0],
+[-2.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, -2.0],
 
 ];
 
